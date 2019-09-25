@@ -1,5 +1,6 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
+import * as yup from 'yup'
 import { AuthTemplate } from '../template/auth-template'
 import { FieldUniversal } from '../../../ui/organisms'
 
@@ -10,42 +11,50 @@ const initialValues = {
   repeatPassword: '',
 }
 
+const validationSchema = yup.object().shape({
+  firstname: yup.string().required('Поле имя обязательно'),
+  lastname: yup.string().required('Поле фамилия обязательно'),
+  password: yup.string().required('Поле пароль обязательно'),
+  repeatPassword: yup.string().required('Поле пароль обязательно'),
+})
+
 export const AuthForm = () => {
   return (
     <AuthTemplate>
       <Formik
         initialValues={initialValues}
-        onSubmit={(v) => console.log('submit', v)}
+        validationSchema={validationSchema}
+        onSubmit={v => console.log('submit', v)}
       >
         {({ values }) => {
           return (
             <Form>
-              <Field 
-                name="firstname"
-                placeholder="firstname"
-                type="text"
-                label="Введите имя"
+              <Field
+                name='firstname'
+                placeholder='firstname'
+                type='text'
+                label='Введите имя'
                 component={FieldUniversal}
               />
-              <Field 
-                name="lastname"
-                placeholder="lastName"
-                type="text"
-                label="Введите фамилию"
+              <Field
+                name='lastname'
+                placeholder='lastName'
+                type='text'
+                label='Введите фамилию'
                 component={FieldUniversal}
               />
-              <Field 
-                name="password"
-                placeholder="password"
-                type="text"
-                label="Введите пароль"
+              <Field
+                name='password'
+                placeholder='password'
+                type='text'
+                label='Введите пароль'
                 component={FieldUniversal}
               />
-              <Field 
-                name="repeatPassword"
-                placeholder="repeat password"
-                type="text"
-                label="Повторите пароль"
+              <Field
+                name='repeatPassword'
+                placeholder='repeat password'
+                type='text'
+                label='Повторите пароль'
                 component={FieldUniversal}
               />
               <button type='submit'>Войти</button>

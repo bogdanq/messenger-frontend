@@ -3,13 +3,13 @@ import { Input } from 'semantic-ui-react'
 import { Col } from '../atoms'
 
 export const FieldUniversal = ({ type, children, field, label, ...rest }) => {
-  let component = <Input {...rest} {...field}/>
-  switch(type) {
+  let component = <Input {...rest} {...field} />
+  switch (type) {
     case 'select':
       component = 'select'
       break
     default:
-      component = <Input {...rest} {...field}/>
+      component = <Input {...rest} {...field} />
       break
   }
 
@@ -18,6 +18,7 @@ export const FieldUniversal = ({ type, children, field, label, ...rest }) => {
       {label && label}
       {component}
       {component === 'input' && children}
+      <p style={{ color: 'red' }}>{rest.form.errors[field.name]}</p>
     </Col>
   )
 }
