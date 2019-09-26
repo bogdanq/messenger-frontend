@@ -8,4 +8,5 @@ export const CenterContent = styled.main`
   overflow-y: auto;
   flex-direction: column;
   width: 100%;
+  padding: 10px 0;
 `

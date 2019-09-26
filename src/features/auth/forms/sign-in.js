@@ -3,6 +3,8 @@ import { Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import { AuthTemplate } from '../template/auth-template'
 import { FieldUniversal } from '../../../ui/organisms'
+import { CenterContent } from '../../../ui/template'
+import { Button } from '../../../ui/atoms'
 
 const initialValues = {
   firstname: '',
@@ -38,7 +40,9 @@ export const LoginForm = () => {
                 label='Пароль'
                 component={FieldUniversal}
               />
-              <button type='submit'>Войти</button>
+              <CenterContent>
+                <Button type='submit' />
+              </CenterContent>
             </Form>
           )
         }}
