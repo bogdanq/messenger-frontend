@@ -31,28 +31,24 @@ export const AuthForm = () => {
             <Form>
               <Field
                 name='firstname'
-                placeholder='firstname'
                 type='text'
                 label='Введите имя'
                 component={FieldUniversal}
               />
               <Field
                 name='lastname'
-                placeholder='lastName'
                 type='text'
                 label='Введите фамилию'
                 component={FieldUniversal}
               />
               <Field
                 name='password'
-                placeholder='password'
                 type='text'
                 label='Введите пароль'
                 component={FieldUniversal}
               />
               <Field
                 name='repeatPassword'
-                placeholder='repeat password'
                 type='text'
                 label='Повторите пароль'
                 component={FieldUniversal}

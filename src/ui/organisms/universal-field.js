@@ -1,24 +1,29 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
-import { Col } from '../atoms'
+import { Col, TextField} from '../atoms'
 
 export const FieldUniversal = ({ type, children, field, label, ...rest }) => {
-  let component = <Input {...rest} {...field} />
+  const error =
+  rest.form.submitCount > 0 && (rest.form.errors[field.name]);
+  let component = <TextField error={error} rest={rest} field={field} label={label}/>
+
   switch (type) {
     case 'select':
       component = 'select'
       break
+    case 'password':
+      component = <TextField type='password' error={error} rest={rest} field={field} label={label}/>
+      break
     default:
-      component = <Input {...rest} {...field} />
+      component = <TextField error={error} rest={rest} field={field} label={label}/>
       break
   }
 
   return (
     <Col>
-      {label && label}
       {component}
       {component === 'input' && children}
-      <p style={{ color: 'red' }}>{rest.form.errors[field.name]}</p>
+      {error && <p style={{ color: 'red', marginBottom: '15px' }}>{error}</p>}
     </Col>
   )
 }
+

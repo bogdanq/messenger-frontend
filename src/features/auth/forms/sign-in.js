@@ -17,6 +17,7 @@ const validationSchema = yup.object().shape({
 export const LoginForm = () => {
   return (
     <AuthTemplate>
+      <h1>Добро пожаловать в чат!</h1>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -27,16 +28,14 @@ export const LoginForm = () => {
             <Form>
               <Field
                 name='firstname'
-                placeholder='firstname'
                 type='text'
-                label='Введите имя'
+                label='Логин'
                 component={FieldUniversal}
               />
               <Field
                 name='password'
-                placeholder='lastName'
-                type='text'
-                label='Введите пароль'
+                type='password'
+                label='Пароль'
                 component={FieldUniversal}
               />
               <button type='submit'>Войти</button>

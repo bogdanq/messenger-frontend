@@ -90,6 +90,7 @@ const globalStylesCss = css`
         font: inherit;
         vertical-align: baseline;
         box-sizing: border-box;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
     }
     article,
     aside,
@@ -136,6 +137,26 @@ const globalStylesCss = css`
     a:focus {
         outline: 0 none;
     }
+    h1 {
+    display: block;
+    font-size: 2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+    text-align: center;
+    padding: 25px 0;
+}
+:root {
+  --text-color: #212121;
+  --text-color-light: #b4b4b4;
+  --input-font-size: 15px;
+  --input-line-height: 24px;
+  --input-height: 40px;
+  --input-border-color: hsla(0, 0%, 55%, 0.9);
+  --input-border-color-primary: red;
+  --input-border-color-secondary: #b4b4b4;
+  --border-size: 1px;
+}
 `;
 export const GlobalStyles = createGlobalStyle`${globalStylesCss};`;
 
