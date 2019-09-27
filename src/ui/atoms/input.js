@@ -3,7 +3,14 @@ import styled, { css } from 'styled-components'
 import useOnClickOutside from 'use-onclickoutside'
 import { ifProps } from '../../lib/styled-components-layout'
 
-export const TextField = ({ rest, field, label, error, type = 'text' }) => {
+export const TextField = ({
+  rest,
+  field,
+  label,
+  error,
+  type = 'text',
+  disabled,
+}) => {
   const [open, setOpen] = React.useState(false)
   const inputRef = React.useRef(null)
   const toogleOpen = isOpen => {
@@ -15,20 +22,28 @@ export const TextField = ({ rest, field, label, error, type = 'text' }) => {
   useOnClickOutside(inputRef, () => toogleOpen)
 
   return (
-    <InputPositionConyainer>
+    <InputPositionContainer disabled={disabled}>
+      <InputLabel open={open} onClick={() => inputRef.current.focus()}>
+        {label}
+      </InputLabel>
+      {rest.icon && (
+        <IconWrapper>
+          <rest.icon />
+        </IconWrapper>
+      )}
+
       <InputStyles error={error}>
         <Input
-          ref={inputRef}
           {...rest}
           {...field}
           type={type}
           onFocus={() => toogleOpen(true)}
           onBlur={() => toogleOpen(false)}
-          autoComplete='off'
+          ref={inputRef}
+          disabled={disabled}
         />
-        <InputLabel open={open}>{label}</InputLabel>
       </InputStyles>
-    </InputPositionConyainer>
+    </InputPositionContainer>
   )
 }
 
@@ -46,6 +61,10 @@ const Input = styled.input`
   min-height: var(--input-height);
   letter-spacing: -0.3px;
   resize: none;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `
 
 const InputStyles = styled.div`
@@ -53,7 +72,7 @@ const InputStyles = styled.div`
   --input-placeholder-line-height: var(--input-line-height);
   --input-border-size: var(--border-size);
   border-bottom: var(--input-border-size) solid var(--input-border-color);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   & input:focus {
     border-bottom: var(--input-border-size) solid
       var(--input-border-color-secondary);
@@ -63,16 +82,18 @@ const InputStyles = styled.div`
     css`
       border-bottom: var(--input-border-size) solid
         var(--input-border-color-primary);
-      margin-bottom: 5px;
-      & label {
-        color: var(--text-color-primary);
-      }
     `,
   )}
 `
 
-const InputPositionConyainer = styled.div`
+const InputPositionContainer = styled.div`
   position: relative;
+  ${ifProps(
+    'disabled',
+    css`
+      opacity: 0.5;
+    `,
+  )}
 `
 
 const InputLabel = styled.label`
@@ -93,4 +114,12 @@ const InputLabel = styled.label`
   )}
   cursor: text;
   letter-spacing: -0.25px;
+`
+
+const IconWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: 11px;
+  width: 20px;
+  color: #b4b4b4;
 `

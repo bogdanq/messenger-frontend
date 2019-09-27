@@ -1,14 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import formBg from '../../../assets/form_bg1.jpg'
-import { Conteiner } from '../../../ui/template'
-import { Col } from '../../../ui/atoms'
+import { Container } from '../../../ui/template'
+import { Col, Title, RegularText } from '../../../ui/atoms'
 
-export const AuthTemplate = ({ children }) => (
+export const AuthTemplate = ({ children, text, link }) => (
   <AuthWrapper>
     <FormWrapper>
+      <Title>Добро пожаловать!</Title>
       <Col>
-        <Conteiner>{children}</Conteiner>
+        <Container>{children}</Container>
+        <RegularText>{text}</RegularText>
+        <RegularText>{link()}</RegularText>
       </Col>
     </FormWrapper>
   </AuthWrapper>
@@ -23,9 +26,10 @@ const FormWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 30px 0;
   & form {
-    min-height: 380px;
-    padding: 32px 48px;
+    min-height: 240px;
+    padding: 10px 48px;
   }
 `
 

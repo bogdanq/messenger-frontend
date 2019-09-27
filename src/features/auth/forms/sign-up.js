@@ -3,6 +3,8 @@ import { Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import { AuthTemplate } from '../template/auth-template'
 import { FieldUniversal } from '../../../ui/organisms'
+import { CenterContent } from '../../../ui/template'
+import { Button } from '../../../ui/atoms'
 
 const initialValues = {
   firstname: '',
@@ -20,7 +22,7 @@ const validationSchema = yup.object().shape({
 
 export const AuthForm = () => {
   return (
-    <AuthTemplate>
+    <AuthTemplate text='Есть аккаунт?' link={() => <a href='123'>Войти</a>}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -53,7 +55,9 @@ export const AuthForm = () => {
                 label='Повторите пароль'
                 component={FieldUniversal}
               />
-              <button type='submit'>Войти</button>
+              <CenterContent>
+                <Button type='submit'>Зарегистрироваться</Button>
+              </CenterContent>
             </Form>
           )
         }}

@@ -135,6 +135,7 @@ const globalStylesCss = css`
   a:visited {
     color: inherit;
     text-decoration: none;
+    color: #9042d6;
   }
   a:focus {
     outline: 0 none;

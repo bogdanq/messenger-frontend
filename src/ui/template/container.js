@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { WithTag, mixins } from '../../lib/styled-components-layout'
 
-export const Conteiner = styled(WithTag)`
+export const Container = styled(WithTag)`
   ${mixins}
   max-width: 1800px;
   width: 100%;
