@@ -4,9 +4,8 @@ import * as yup from 'yup'
 import { Email } from 'styled-icons/material/Email'
 import { Lock } from 'styled-icons/boxicons-regular/Lock'
 import { AuthTemplate } from '../template/auth-template'
-import { FieldUniversal } from '../../../ui/organisms'
 import { CenterContent } from '../../../ui/template'
-import { Button } from '../../../ui/atoms'
+import { Button, UniversalField } from '../../../ui/molecules'
 
 const initialValues = {
   firstname: '',
@@ -37,14 +36,14 @@ export const LoginForm = () => {
                 name='firstname'
                 type='text'
                 label='Логин'
-                component={FieldUniversal}
+                component={UniversalField}
               />
               <Field
                 icon={Lock}
                 name='password'
                 type='password'
                 label='Пароль'
-                component={FieldUniversal}
+                component={UniversalField}
               />
               <CenterContent>
                 <Button type='submit'>Авторизоваться</Button>

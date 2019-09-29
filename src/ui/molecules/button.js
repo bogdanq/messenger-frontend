@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { RoundSpinner } from './round-spinner'
+import { RoundSpinner } from '../atoms/round-spinner'
 import { ifProps } from '../../lib/styled-components-layout'
 
 export const Button = ({ disabled, loading, type = 'button', children }) => {

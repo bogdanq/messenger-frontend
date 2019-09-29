@@ -1,7 +1,8 @@
 import React from 'react'
-import { Col, TextField, ErrorText } from '../atoms'
+import { Col, ErrorText } from '../atoms'
+import { TextField } from '.'
 
-export const FieldUniversal = ({ type, children, field, label, ...rest }) => {
+export const UniversalField = ({ type, children, field, label, ...rest }) => {
   const error = rest.form.submitCount > 0 && rest.form.errors[field.name]
   let component = (
     <TextField error={error} rest={rest} field={field} label={label} />

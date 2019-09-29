@@ -2,9 +2,8 @@ import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import { AuthTemplate } from '../template/auth-template'
-import { FieldUniversal } from '../../../ui/organisms'
 import { CenterContent } from '../../../ui/template'
-import { Button } from '../../../ui/atoms'
+import { Button, UniversalField } from '../../../ui/molecules'
 
 const initialValues = {
   firstname: '',
@@ -35,25 +34,25 @@ export const AuthForm = () => {
                 name='firstname'
                 type='text'
                 label='Введите имя'
-                component={FieldUniversal}
+                component={UniversalField}
               />
               <Field
                 name='lastname'
                 type='text'
                 label='Введите фамилию'
-                component={FieldUniversal}
+                component={UniversalField}
               />
               <Field
                 name='password'
                 type='text'
                 label='Введите пароль'
-                component={FieldUniversal}
+                component={UniversalField}
               />
               <Field
                 name='repeatPassword'
                 type='text'
                 label='Повторите пароль'
-                component={FieldUniversal}
+                component={UniversalField}
               />
               <CenterContent>
                 <Button type='submit'>Зарегистрироваться</Button>
