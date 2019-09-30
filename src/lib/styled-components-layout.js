@@ -11,6 +11,8 @@ WithTag.defaultProps = {
 const is = value => Boolean(value)
 const prop = value => (is(value) ? value : 'initial')
 export const ifProps = (name, styles) => props => is(props[name]) && styles
+export const getStyle = (propsName, styles) => props =>
+  props[propsName] && styles[props[propsName]]
 
 export const mixins = props => css`
   align-content: ${prop(props.alignContent)};

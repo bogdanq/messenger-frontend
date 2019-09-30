@@ -2,7 +2,7 @@ import React, { createContext } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 export const ThemeContext = createContext()
-export const ThemeProvider = ({ children, themes, initialTheme }) => {
+export const CustomThemeProvider = ({ children, themes, initialTheme }) => {
   const [theme, setTheme] = React.useState(themes[initialTheme])
 
   const themeSetter = React.useCallback(
