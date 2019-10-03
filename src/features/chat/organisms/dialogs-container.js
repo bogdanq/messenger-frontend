@@ -1,17 +1,17 @@
 import React from 'react'
 import { DialogsList } from '.'
-import { Profile, Search, FavoriteDialogs } from '../molecules'
-import { DialogsTemplate } from '../templates/dailogs-template'
+import { Profile, FavoriteDialogs } from '../molecules'
+import { SearchForm } from '../forms'
 
 export const DialogsContainer = () => {
   return (
-    <DialogsTemplate>
+    <>
       <>
         <Profile />
-        <Search />
+        <SearchForm />
         <FavoriteDialogs />
         <DialogsList />
       </>
-    </DialogsTemplate>
+    </>
   )
 }

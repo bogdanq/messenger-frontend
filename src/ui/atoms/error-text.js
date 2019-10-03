@@ -6,4 +6,5 @@ export const ErrorText = styled(WithTag)`
   font-style: italic;
   text-align: right;
   font-size: 14px;
+  transform: translateY(-5px);
 `

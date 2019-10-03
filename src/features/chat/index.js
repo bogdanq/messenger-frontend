@@ -2,9 +2,9 @@ export {
   UsersList,
   MessagesArea,
   DialogsList,
-  CurrentDialogInfo,
+  DialogInfo,
   HistoryMessages,
   DialogsContainer,
 } from './organisms'
-export { FavoriteDialogs, Profile, Search } from './molecules'
+export { FavoriteDialogs, Profile } from './molecules'
 export { ChatTemplate } from './templates/chat-template'

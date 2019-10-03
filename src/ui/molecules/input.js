@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import useOnClickOutside from 'use-onclickoutside'
-import { ifProps } from '../../lib/styled-components-layout'
+import { ifProps, getStyle } from '../../lib/styled-components-layout'
 
 export const TextField = ({
   rest,
@@ -22,7 +22,7 @@ export const TextField = ({
   useOnClickOutside(inputRef, () => toogleOpen)
 
   return (
-    <InputPositionContainer disabled={disabled}>
+    <InputPosition {...rest} disabled={disabled}>
       <InputLabel open={open} onClick={() => inputRef.current.focus()}>
         {label}
       </InputLabel>
@@ -43,7 +43,7 @@ export const TextField = ({
           disabled={disabled}
         />
       </InputStyles>
-    </InputPositionContainer>
+    </InputPosition>
   )
 }
 
@@ -86,16 +86,6 @@ const InputStyles = styled.div`
   )}
 `
 
-const InputPositionContainer = styled.div`
-  position: relative;
-  ${ifProps(
-    'disabled',
-    css`
-      opacity: 0.5;
-    `,
-  )}
-`
-
 const InputLabel = styled.label`
   font-size: var(--input-placeholder-font-size);
   line-height: var(--input-placeholder-line-height);
@@ -108,7 +98,7 @@ const InputLabel = styled.label`
   ${ifProps(
     'open',
     css`
-      transform: translateY(-25px);
+      transform: translateY(-33px);
       font-size: calc(var(--input-placeholder-font-size) - 2px);
     `,
   )}
@@ -122,4 +112,37 @@ const IconWrapper = styled.div`
   top: 11px;
   width: 20px;
   color: #b4b4b4;
+`
+
+const inputType = {
+  search: css`
+    & ${Input} {
+      background: #fff;
+      border-radius: 17px;
+      padding: 0 15px;
+      color: #b4b4b4;
+    }
+    & ${InputLabel} {
+      left: 20px;
+      color: #b4b4b4;
+    }
+    & ${InputStyles} {
+      border-radius: 20px;
+      border: 1px solid #b4b4b485;
+    }
+    & ${IconWrapper} {
+      right: 20px;
+    }
+  `,
+}
+
+const InputPosition = styled.div`
+  position: relative;
+  ${getStyle('inputType', inputType)}
+  ${ifProps(
+    'disabled',
+    css`
+      opacity: 0.5;
+    `,
+  )}
 `

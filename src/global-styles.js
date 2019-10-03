@@ -155,7 +155,7 @@ const globalStylesCss = css`
     --text-color-primary: red;
     --input-font-size: 15px;
     --input-line-height: 24px;
-    --input-height: 40px;
+    --input-height: 35px;
     --input-border-color: hsla(0, 0%, 55%, 0.9);
     --input-border-color-primary: red;
     --input-border-color-secondary: #b4b4b4;
