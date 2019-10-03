@@ -1,4 +1,10 @@
 import React from 'react'
-import { ChatTemplate } from '../features/chat'
+import {
+  ChatTemplate,
+  DialogsContainer,
+  HistoryMessages,
+} from '../features/chat'
 
-export const ChatPage = () => <ChatTemplate userGroups={} messagesArea={}/>
+export const ChatPage = () => (
+  <ChatTemplate userGroups={DialogsContainer} messagesArea={HistoryMessages} />
+)

@@ -8,8 +8,8 @@ export const ChatTemplate = ({ userGroups, messagesArea }) => {
     <ChatWrapper>
       <Row>
         <Container>
-          <GroupContainer>{userGroups}</GroupContainer>
-          {messagesArea}
+          <GroupContainer>{userGroups()}</GroupContainer>
+          {messagesArea()}
         </Container>
       </Row>
     </ChatWrapper>
