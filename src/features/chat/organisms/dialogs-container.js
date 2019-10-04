@@ -1,6 +1,6 @@
 import React from 'react'
-import { DialogsList } from '.'
-import { Profile, FavoriteDialogs } from '../molecules'
+import { DialogsList, FavoriteDialogs } from '.'
+import { Profile } from '../molecules'
 import { SearchForm } from '../forms'
 
 export const DialogsContainer = () => {

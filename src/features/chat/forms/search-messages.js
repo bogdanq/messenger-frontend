@@ -41,6 +41,6 @@ export const SearchForm = () => {
 }
 
 const SearchFormWrapper = styled.div`
-  background: #f7f7f7;
+  background: #f2efea;
   padding: 35px 5px 0px 10px;
 `

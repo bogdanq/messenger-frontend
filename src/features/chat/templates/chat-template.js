@@ -8,7 +8,7 @@ export const ChatTemplate = ({ userGroups, messagesArea }) => {
     <ChatWrapper>
       <Row>
         <Container>
-          <GroupContainer>{userGroups()}</GroupContainer>
+          <DialogsContainer>{userGroups()}</DialogsContainer>
           {messagesArea()}
         </Container>
       </Row>
@@ -20,7 +20,7 @@ const ChatWrapper = styled.div`
   height: 100vh;
 `
 
-const GroupContainer = styled.div`
-  border: 1px solid red;
-  width: 25%;
+const DialogsContainer = styled.div`
+  width: 35%;
+  background: #f8f7f3;
 `

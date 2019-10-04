@@ -129,6 +129,9 @@ const inputType = {
     & ${InputStyles} {
       border-radius: 20px;
       border: 1px solid #b4b4b485;
+      & input:focus {
+        border-bottom: var(--input-border-size) solid transparent;
+      }
     }
     & ${IconWrapper} {
       right: 20px;

@@ -8,20 +8,18 @@ export const Button = ({
   loading,
   type = 'button',
   children,
-  size,
-  color,
   view,
   icon: Icon,
+  ...rest
 }) => {
   return (
     <>
       <ButtonStyles
-        size={size}
         loading={loading}
         disabled={disabled}
-        color={color}
         type={type}
         view={view}
+        {...rest}
       >
         {Icon && (
           <IconedStyle>
@@ -36,15 +34,21 @@ export const Button = ({
 }
 
 const buttonSize = {
-  mini: '50px',
+  mini: '40px',
   small: '150px',
   large: '300px',
 }
 
-const buttonColor = {
-  primary: css`
-    background: red;
+const buttonType = {
+  favorite: css`
+    background: #620a9c;
     color: #fff;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
   `,
 }
 
@@ -74,7 +78,7 @@ const ButtonStyles = styled.button`
     `,
   )};
   width: ${getStyle('size', buttonSize)};
-  ${getStyle('color', buttonColor)};
+  ${getStyle('buttonType', buttonType)};
   &:disabled {
     opacity: 0.6;
     box-shadow: 0 6px 11px 0 rgba(198, 199, 200, 0.6);

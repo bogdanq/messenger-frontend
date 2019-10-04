@@ -1,2 +1,2 @@
-export { FavoriteDialogs } from './favorite-dialogs'
+export { FavoriteDialogsList } from './favorite-dialogs-list'
 export { Profile } from './profile'
