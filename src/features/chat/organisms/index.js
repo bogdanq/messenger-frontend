@@ -1,5 +1,5 @@
 export { DialogInfo } from './dialog-info'
-export { DialogsList } from './dialogs-list'
+export { Dialogs } from './dialogs'
 export { MessagesArea } from './messages-area'
 export { UsersList } from './users-list'
 export { DialogsContainer } from './dialogs-container'

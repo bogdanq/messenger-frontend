@@ -6,7 +6,7 @@ import { Container } from '../../../ui/template'
 export const ChatTemplate = ({ userGroups, messagesArea }) => {
   return (
     <ChatWrapper>
-      <Row>
+      <Row height='100%'>
         <Container>
           <DialogsContainer>{userGroups()}</DialogsContainer>
           {messagesArea()}
@@ -21,6 +21,6 @@ const ChatWrapper = styled.div`
 `
 
 const DialogsContainer = styled.div`
-  width: 35%;
+  width: 350px;
   background: #f8f7f3;
 `

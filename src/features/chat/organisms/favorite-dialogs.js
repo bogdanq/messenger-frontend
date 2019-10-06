@@ -27,4 +27,5 @@ const FavoriteDialogsWrapper = styled.div`
   height: 100px;
   display: flex;
   padding: 0 10px;
+  margin-bottom: 20px;
 `

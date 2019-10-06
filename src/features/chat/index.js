@@ -1,7 +1,7 @@
 export {
   UsersList,
   MessagesArea,
-  DialogsList,
+  Dialogs,
   DialogInfo,
   HistoryMessages,
   DialogsContainer,

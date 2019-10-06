@@ -1,4 +1,28 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { getStyle } from '../../lib/styled-components-layout'
+
+const textStyle = {
+  userName: css`
+    font-weight: 500;
+    color: #000;
+    text-align: left;
+  `,
+  message: css`
+    text-align: left;
+  `,
+  unreadMessages: css`
+    background: #64c270;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 11px;
+    min-width: 21px;
+    text-align: center;
+    margin-top: 7px;
+    color: #fff;
+    font-weight: 500;
+    padding: 0;
+  `,
+}
 
 export const RegularText = styled.p`
   display: block;
@@ -6,4 +30,15 @@ export const RegularText = styled.p`
   color: #5a6e81;
   text-align: center;
   padding: 5px 0;
+  transition: all 0.5s;
+  line-height: 19px;
+  ${getStyle('type', textStyle)};
+  &:first-letter {
+    text-transform: uppercase;
+  }
+  & i {
+    font-style: italic;
+    color: #3a6d99;
+    margin-right: 5px;
+  }
 `
