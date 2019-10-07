@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { getStyle } from '../../lib/styled-components-layout'
 
 const textStyle = {
-  userName: css`
+  user_name: css`
     font-weight: 500;
     color: #000;
     text-align: left;
@@ -10,7 +10,7 @@ const textStyle = {
   message: css`
     text-align: left;
   `,
-  unreadMessages: css`
+  unread_messages: css`
     background: #64c270;
     font-size: 11px;
     padding: 5px;
@@ -20,7 +20,16 @@ const textStyle = {
     margin-top: 7px;
     color: #fff;
     font-weight: 500;
-    padding: 0;
+    padding: 0px 5px;
+    max-width: 40px;
+  `,
+}
+
+const textTransform = {
+  truncate: css`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   `,
 }
 
@@ -33,6 +42,7 @@ export const RegularText = styled.p`
   transition: all 0.5s;
   line-height: 19px;
   ${getStyle('type', textStyle)};
+  ${getStyle('transform', textTransform)};
   &:first-letter {
     text-transform: uppercase;
   }

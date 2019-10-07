@@ -8,6 +8,7 @@ export const MessagesArea = () => (
 )
 
 const MessagesAreaWrapper = styled.div`
-  width: 70%;
+  width: 100%;
   border: 1px solid blue;
+  height: 100%;
 `

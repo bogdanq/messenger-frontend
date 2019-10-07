@@ -17,7 +17,9 @@ export const ChatTemplate = ({ userGroups, messagesArea }) => {
 }
 
 const ChatWrapper = styled.div`
-  height: 100vh;
+  height: 90vh;
+  border: 1px solid #000;
+  padding: 50px 0;
 `
 
 const DialogsContainer = styled.div`
