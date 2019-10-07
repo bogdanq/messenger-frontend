@@ -3,12 +3,14 @@ import styled from 'styled-components'
 
 export const MessagesArea = () => (
   <MessagesAreaWrapper>
-    <h1>MessagesArea</h1>
+    {[1, 2].map(() => (
+      <h1>MessagesArea</h1>
+    ))}
   </MessagesAreaWrapper>
 )
 
 const MessagesAreaWrapper = styled.div`
   width: 100%;
-  border: 1px solid blue;
+  background: green;
   height: 100%;
 `

@@ -1,40 +1,65 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MessagesArea, DialogInfo } from '.'
-import { Row } from '../../../ui/atoms'
+import { ParentScroll, ScrollBlock } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
 import { useDropdown } from '../../../hooks/useDropdown'
 
 export const HistoryMessages = () => {
-  const refDialogInfo = React.useRef(null)
-  const [opened, toggle] = useDropdown(refDialogInfo)
+  const [opened, toggle] = useDropdown()
 
   return (
-    <HistoryMessagesWrapper>
-      <MessagesHeader toggle={toggle} />
-      <Row>
-        <Container>
+    <MessagesWrapper>
+      <Container>
+        <MessagesHeader toggle={toggle} />
+      </Container>
+      <ParentScroll>
+        <ScrollBlock width='100%'>
           <MessagesArea />
-          {opened && <DialogInfo refDialogInfo={refDialogInfo} />}
-        </Container>
-      </Row>
-    </HistoryMessagesWrapper>
+        </ScrollBlock>
+        {opened && (
+          <ScrollBlock width='30%'>
+            <DialogInfo />
+          </ScrollBlock>
+        )}
+      </ParentScroll>
+      <Container>
+        <SendMessageBlock />
+      </Container>
+    </MessagesWrapper>
   )
 }
 
-const HistoryMessagesWrapper = styled.div`
+const MessagesWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `
+
 const MessagesHeader = ({ toggle }) => {
   return (
-    <MessagesHeaderWrapper>
+    <HeaderWrapper>
       <h1>Header</h1>
       <button onClick={toggle}>toggle site bar</button>
-    </MessagesHeaderWrapper>
+    </HeaderWrapper>
   )
 }
 
-const MessagesHeaderWrapper = styled.div`
-  border: 1px solid green;
+const SendMessageBlock = () => {
+  return (
+    <SendWrapper>
+      <h1>Send</h1>
+    </SendWrapper>
+  )
+}
+
+const HeaderWrapper = styled.div`
   min-height: 80px;
+  border: 1px solid red;
+`
+
+const SendWrapper = styled.div`
+  min-height: 50px;
+  border: 1px solid red;
 `
