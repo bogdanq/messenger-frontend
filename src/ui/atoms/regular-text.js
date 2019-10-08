@@ -37,10 +37,10 @@ export const RegularText = styled.p`
   display: block;
   font-size: 16px;
   color: #5a6e81;
-  text-align: center;
   padding: 5px 0;
   transition: all 0.5s;
   line-height: 19px;
+  text-align: left;
   ${getStyle('type', textStyle)};
   ${getStyle('transform', textTransform)};
   &:first-letter {

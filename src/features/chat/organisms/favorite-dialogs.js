@@ -4,7 +4,7 @@ import { Row, HorizonScroll } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
 import { FavoriteDialogsList } from '../molecules'
 
-const list = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+const list = [1, 2, 3, 4]
 
 export const FavoriteDialogs = () => {
   return (

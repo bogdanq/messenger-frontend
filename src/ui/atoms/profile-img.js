@@ -6,6 +6,8 @@ export const ProfileImg = styled.div`
   width: 60px;
   background: #fff;
   padding: 5px;
+  border: 1px solid #000;
+  overflow: hidden;
   & img,
   svg {
     width: 100%;

@@ -142,12 +142,10 @@ const globalStylesCss = css`
   }
   h1 {
     display: block;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: 400;
-    text-align: center;
-    padding: 25px 0;
   }
   :root {
     --text-color: #212121;

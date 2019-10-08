@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MessagesArea, DialogInfo } from '.'
-import { ParentScroll, ScrollBlock } from '../../../ui/atoms'
+import {
+  ParentScroll,
+  ScrollBlock,
+  Title,
+  Row,
+  Col,
+  RegularText,
+} from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
 import { useDropdown } from '../../../hooks/useDropdown'
 
@@ -40,8 +47,21 @@ const MessagesWrapper = styled.div`
 const MessagesHeader = ({ toggle }) => {
   return (
     <HeaderWrapper>
-      <h1>Header</h1>
-      <button onClick={toggle}>toggle site bar</button>
+      <Row>
+        <Container align='center' justify='space-between'>
+          <Col>
+            <Title transform='truncate'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </Title>
+            <RegularText>last seen 2 hours ago</RegularText>
+          </Col>
+          <Row>
+            <button onClick={toggle}>toggle site bar</button>
+            <button onClick={toggle}>Поиск</button>
+            <button onClick={toggle}>Меню</button>
+          </Row>
+        </Container>
+      </Row>
     </HeaderWrapper>
   )
 }
@@ -56,7 +76,8 @@ const SendMessageBlock = () => {
 
 const HeaderWrapper = styled.div`
   min-height: 80px;
-  border: 1px solid red;
+  background: linear-gradient(to bottom, #f8f7f3, #f2efea);
+  padding: 25px 50px;
 `
 
 const SendWrapper = styled.div`
