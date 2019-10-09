@@ -71,7 +71,7 @@ const DialogWrapper = styled.div`
   padding: 10px;
   transition: all 0.5s;
   &:hover {
-    background: #dfdeda;
+    background: #f2efea;
   }
   & ${Container} {
     min-height: 60px;

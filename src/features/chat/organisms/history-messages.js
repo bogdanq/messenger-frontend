@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Sidebar } from 'styled-icons/feather/Sidebar'
+import { Search } from 'styled-icons/boxicons-regular/Search'
+import { Menu } from 'styled-icons/feather/Menu'
 import { MessagesArea, DialogInfo } from '.'
 import {
   ParentScroll,
@@ -10,7 +13,9 @@ import {
   RegularText,
 } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
+import { Button } from '../../../ui/molecules'
 import { useDropdown } from '../../../hooks/useDropdown'
+import { SendForm } from '../forms'
 
 export const HistoryMessages = () => {
   const [opened, toggle] = useDropdown()
@@ -18,7 +23,7 @@ export const HistoryMessages = () => {
   return (
     <MessagesWrapper>
       <Container>
-        <MessagesHeader toggle={toggle} />
+        <MessagesHeader toggle={toggle} hasOpenedDialog={opened} />
       </Container>
       <ParentScroll>
         <ScrollBlock width='100%'>
@@ -44,7 +49,7 @@ const MessagesWrapper = styled.div`
   flex-direction: column;
 `
 
-const MessagesHeader = ({ toggle }) => {
+const MessagesHeader = ({ toggle, hasOpenedDialog }) => {
   return (
     <HeaderWrapper>
       <Row>
@@ -56,9 +61,14 @@ const MessagesHeader = ({ toggle }) => {
             <RegularText>last seen 2 hours ago</RegularText>
           </Col>
           <Row>
-            <button onClick={toggle}>toggle site bar</button>
-            <button onClick={toggle}>Поиск</button>
-            <button onClick={toggle}>Меню</button>
+            <Button
+              onClick={toggle}
+              icon={Sidebar}
+              buttonType='header'
+              active={hasOpenedDialog}
+            />
+            <Button icon={Search} buttonType='header' />
+            <Button icon={Menu} buttonType='header' />
           </Row>
         </Container>
       </Row>
@@ -69,18 +79,24 @@ const MessagesHeader = ({ toggle }) => {
 const SendMessageBlock = () => {
   return (
     <SendWrapper>
-      <h1>Send</h1>
+      <SendForm />
     </SendWrapper>
   )
 }
 
 const HeaderWrapper = styled.div`
-  min-height: 80px;
-  background: linear-gradient(to bottom, #f8f7f3, #f2efea);
-  padding: 25px 50px;
+  min-height: 50px;
+  border: 1px solid #f2efea;
+  padding: var(--global-padding);
+  ${Row} {
+    & > button + button {
+      margin-left: 1rem;
+    }
+  }
 `
 
 const SendWrapper = styled.div`
   min-height: 50px;
-  border: 1px solid red;
+  border: 1px solid #f2efea;
+  padding: var(--global-padding);
 `

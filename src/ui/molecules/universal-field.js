@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, ErrorText } from '../atoms'
-import { TextField } from '.'
+import { TextField, TextAreaField } from '.'
 
 export const UniversalField = ({ type, children, field, label, ...rest }) => {
   const error = rest.form.submitCount > 0 && rest.form.errors[field.name]
@@ -11,6 +11,16 @@ export const UniversalField = ({ type, children, field, label, ...rest }) => {
   switch (type) {
     case 'select':
       component = 'select'
+      break
+    case 'textarea':
+      component = (
+        <TextAreaField
+          error={error}
+          rest={rest}
+          field={field}
+          placeholder='write a message...'
+        />
+      )
       break
     case 'password':
       component = (

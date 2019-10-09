@@ -8,6 +8,7 @@ export const DialogInfo = () => (
 )
 
 const DialogInfoWrapper = styled.div`
-  background: red;
-  height: 800px;
+  height: 100%;
+  padding: var(--global-padding);
+  border: 1px solid #f2efea;
 `

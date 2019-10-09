@@ -11,7 +11,7 @@ const textStyle = {
     text-align: left;
   `,
   unread_messages: css`
-    background: #64c270;
+    background: #7149bb;
     font-size: 11px;
     padding: 5px;
     border-radius: 11px;

@@ -33,6 +33,15 @@ export const Button = ({
   )
 }
 
+const IconedStyle = styled.div`
+  transform: translateX(-5px);
+  width: calc(16px + 5px);
+  color: #9042d6;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+`
+
 const buttonSize = {
   mini: '40px',
   small: '150px',
@@ -41,7 +50,7 @@ const buttonSize = {
 
 const buttonType = {
   favorite: css`
-    background: #620a9c;
+    background: #ddc557;
     color: #fff;
     border-radius: 10px;
     width: 40px;
@@ -49,6 +58,28 @@ const buttonType = {
     padding: 0;
     margin: 0;
     margin-right: 10px;
+  `,
+  header: css`
+    background: transparent;
+    box-shadow: none;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+    ${IconedStyle} {
+      width: 25px;
+      transition: all 0.5s;
+      ${ifProps(
+        'active',
+        css`
+          color: #9e9e9e;
+        `,
+      )}
+    }
+    &:hover {
+      ${IconedStyle} {
+        color: #9e9e9e;
+      }
+    }
   `,
 }
 
@@ -84,13 +115,4 @@ const ButtonStyles = styled.button`
     box-shadow: 0 6px 11px 0 rgba(198, 199, 200, 0.6);
     cursor: not-allowed;
   }
-`
-
-const IconedStyle = styled.div`
-  transform: translateX(-5px);
-  width: calc(16px + 5px);
-  color: #9042d6;
-  height: auto;
-  display: flex;
-  flex-direction: column;
 `

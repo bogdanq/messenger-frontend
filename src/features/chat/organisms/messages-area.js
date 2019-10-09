@@ -11,6 +11,7 @@ export const MessagesArea = () => (
 
 const MessagesAreaWrapper = styled.div`
   width: 100%;
-  background: green;
   height: 100%;
+  padding: var(--global-padding);
+  border: 1px solid #f2efea;
 `

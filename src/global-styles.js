@@ -158,12 +158,24 @@ const globalStylesCss = css`
     --input-border-color-primary: red;
     --input-border-color-secondary: #b4b4b4;
     --border-size: 1px;
+    --global-padding: 0.5rem 1rem;
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
     -webkit-text-fill-color: #000 !important;
+  }
+  ::-webkit-scrollbar {
+    width: 3px !important;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #f2efea;
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 20px !important;
+    background-color: #9e9e9e !important;
+    border-radius: 6px !important;
   }
 `
 export const GlobalStyles = createGlobalStyle`${globalStylesCss};`
