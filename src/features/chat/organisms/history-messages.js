@@ -18,18 +18,21 @@ import { useDropdown } from '../../../hooks/useDropdown'
 import { SendForm } from '../forms'
 
 export const HistoryMessages = () => {
-  const [opened, toggle] = useDropdown()
+  const [openDialogInfo, setOpenDialogInfo] = useDropdown()
 
   return (
     <MessagesWrapper>
       <Container>
-        <MessagesHeader toggle={toggle} hasOpenedDialog={opened} />
+        <MessagesHeader
+          setOpenDialogInfo={setOpenDialogInfo}
+          openDialogInfo={openDialogInfo}
+        />
       </Container>
       <ParentScroll>
         <ScrollBlock width='100%'>
           <MessagesArea />
         </ScrollBlock>
-        {opened && (
+        {openDialogInfo && (
           <ScrollBlock width='30%'>
             <DialogInfo />
           </ScrollBlock>
@@ -49,7 +52,7 @@ const MessagesWrapper = styled.div`
   flex-direction: column;
 `
 
-const MessagesHeader = ({ toggle, hasOpenedDialog }) => {
+const MessagesHeader = ({ setOpenDialogInfo, openDialogInfo }) => {
   return (
     <HeaderWrapper>
       <Row>
@@ -62,17 +65,44 @@ const MessagesHeader = ({ toggle, hasOpenedDialog }) => {
           </Col>
           <Row>
             <Button
-              onClick={toggle}
+              onClick={setOpenDialogInfo}
               icon={Sidebar}
               buttonType='header'
-              active={hasOpenedDialog}
+              active={openDialogInfo}
             />
             <Button icon={Search} buttonType='header' />
-            <Button icon={Menu} buttonType='header' />
+            <WithDropDown
+              render={() => (
+                <h1 style={{ position: 'absolute' }}>
+                  Выпадашка абсолютом высчитать от текущего места
+                </h1>
+              )}
+            >
+              {(open, isOpen) => (
+                <Button
+                  onClick={open}
+                  icon={Menu}
+                  buttonType='header'
+                  active={isOpen}
+                />
+              )}
+            </WithDropDown>
           </Row>
         </Container>
       </Row>
     </HeaderWrapper>
+  )
+}
+
+const WithDropDown = ({ children, render }) => {
+  const ref = React.useRef(null)
+  const [opened, toogle] = useDropdown(ref)
+
+  return (
+    <div ref={opened ? ref : null}>
+      {children(toogle, opened)}
+      {opened && <div>{render(toogle)}</div>}
+    </div>
   )
 }
 
