@@ -11,9 +11,10 @@ import {
   Row,
   Col,
   RegularText,
+  Positioner,
 } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
-import { Button } from '../../../ui/molecules'
+import { Button, WithDropDown } from '../../../ui/molecules'
 import { useDropdown } from '../../../hooks/useDropdown'
 import { SendForm } from '../forms'
 
@@ -72,10 +73,10 @@ const MessagesHeader = ({ setOpenDialogInfo, openDialogInfo }) => {
             />
             <Button icon={Search} buttonType='header' />
             <WithDropDown
-              render={() => (
-                <h1 style={{ position: 'absolute' }}>
+              popper={position => (
+                <Positioner position={position}>
                   Выпадашка абсолютом высчитать от текущего места
-                </h1>
+                </Positioner>
               )}
             >
               {(open, isOpen) => (
@@ -94,18 +95,6 @@ const MessagesHeader = ({ setOpenDialogInfo, openDialogInfo }) => {
   )
 }
 
-const WithDropDown = ({ children, render }) => {
-  const ref = React.useRef(null)
-  const [opened, toogle] = useDropdown(ref)
-
-  return (
-    <div ref={opened ? ref : null}>
-      {children(toogle, opened)}
-      {opened && <div>{render(toogle)}</div>}
-    </div>
-  )
-}
-
 const SendMessageBlock = () => {
   return (
     <SendWrapper>
@@ -119,7 +108,7 @@ const HeaderWrapper = styled.div`
   border: 1px solid #f2efea;
   padding: var(--global-padding);
   ${Row} {
-    & > button + button {
+    & button {
       margin-left: 1rem;
     }
   }
