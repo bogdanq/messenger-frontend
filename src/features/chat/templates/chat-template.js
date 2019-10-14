@@ -18,11 +18,11 @@ export const ChatTemplate = ({ userGroups, messagesArea }) => {
 
 const ChatWrapper = styled.div`
   height: 90vh;
-  border: 1px solid #000;
   padding: 50px 0;
 `
 
 const DialogsContainer = styled.div`
   width: 350px;
-  background: #f8f7f3;
+  background: #fff;
+  border: 1px solid #f2efea;
 `

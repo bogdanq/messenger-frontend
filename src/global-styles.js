@@ -147,6 +147,13 @@ const globalStylesCss = css`
     margin-inline-end: 0px;
     font-weight: 400;
   }
+  h2 {
+    display: block;
+    font-size: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 500;
+  }
   :root {
     --text-color: #212121;
     --text-color-light: #b4b4b4;

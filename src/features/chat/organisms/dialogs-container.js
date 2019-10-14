@@ -21,5 +21,6 @@ export const DialogsContainer = () => {
 
 const ScrollBlock = styled.div`
   overflow-y: scroll;
-  height: calc(100% - 275px);
+  height: calc(100% - 274px);
+  border-top: 1px solid #f2efea;
 `

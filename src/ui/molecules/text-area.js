@@ -16,7 +16,7 @@ export const TextAreaField = ({
   return (
     <>
       <Row>
-        <Container align='row'>
+        <Container align='center'>
           <IconWrapper>
             <Paperclip />
           </IconWrapper>

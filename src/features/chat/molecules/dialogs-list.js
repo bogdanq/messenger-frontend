@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { People } from 'styled-icons/material/People'
-// import Truncate from 'react-truncate'
+import { CheckDouble } from 'styled-icons/boxicons-regular/CheckDouble'
+// import { Check } from 'styled-icons/boxicons-regular/Check'
 import { ConditionalList } from '../../../ui/organisms'
 import { Row, RegularText, ProfileImg, Col } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
@@ -38,7 +39,9 @@ const DialogsListItem = ({ index, item }) => (
           <RegularText type='unread_messages' transform='truncate'>
             12
           </RegularText>
-          <DialogUnread />
+          <DialogCheck>
+            <CheckDouble />
+          </DialogCheck>
         </Col>
       </Container>
     </Row>
@@ -53,16 +56,16 @@ const MessageWrap = styled.div`
   width: 100%;
 `
 
-const DialogUnread = styled.div`
-  background: #c1d6e5;
+const DialogCheck = styled.div`
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 20px;
+  height: 20px;
   border-radius: 5px;
   overflow: hidden;
   margin: 0 auto;
   margin-top: 12px;
   transition: all 0.5s;
+  color: #0c8fe4;
 `
 
 const DialogWrapper = styled.div`
@@ -71,7 +74,7 @@ const DialogWrapper = styled.div`
   padding: 10px;
   transition: all 0.5s;
   &:hover {
-    background: #f2efea;
+    background: #f3f7ff;
   }
   & ${Container} {
     min-height: 60px;

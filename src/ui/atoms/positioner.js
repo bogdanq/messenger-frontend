@@ -6,8 +6,6 @@ export const Positioner = styled.div`
   padding: 15px;
   background: #fff;
   position: absolute;
-  top: ${({ position }) => position && position.top}px;
-  left: ${({ position }) => position && position.left}px;
   ${ifProps(
     'position',
     css`
