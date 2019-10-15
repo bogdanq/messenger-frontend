@@ -14,27 +14,25 @@ export const TextAreaField = ({
   placeholder,
 }) => {
   return (
-    <>
-      <Row>
-        <Container align='center'>
-          <IconWrapper>
-            <Paperclip />
-          </IconWrapper>
-          <TextAreaWrapper error={error}>
-            <InputStyles
-              placeholder={placeholder}
-              {...rest}
-              {...field}
-              disabled={disabled}
-              as='textarea'
-            />
-          </TextAreaWrapper>
-          <IconWrapper>
-            <Smile />
-          </IconWrapper>
-        </Container>
-      </Row>
-    </>
+    <Row>
+      <Container align='center'>
+        <IconWrapper>
+          <Paperclip />
+        </IconWrapper>
+        <TextAreaWrapper error={error}>
+          <InputStyles
+            placeholder={placeholder}
+            {...rest}
+            {...field}
+            disabled={disabled}
+            as='textarea'
+          />
+        </TextAreaWrapper>
+        <IconWrapper>
+          <Smile />
+        </IconWrapper>
+      </Container>
+    </Row>
   )
 }
 

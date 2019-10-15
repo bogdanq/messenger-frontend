@@ -11,7 +11,7 @@ const generateGradient = name => {
   }
 }
 
-export const ProfileImg = styled.div`
+export const DialogIcon = styled.div`
   border-radius: 50%;
   height: 55px;
   width: 55px;

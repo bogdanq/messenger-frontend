@@ -4,7 +4,7 @@ import { People } from 'styled-icons/material/People'
 import { CheckDouble } from 'styled-icons/boxicons-regular/CheckDouble'
 // import { Check } from 'styled-icons/boxicons-regular/Check'
 import { ConditionalList } from '../../../ui/organisms'
-import { Row, RegularText, ProfileImg, Col } from '../../../ui/atoms'
+import { Row, RegularText, DialogIcon, Col } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
 
 export const DialogsList = ({ list, renderEmpty }) => (
@@ -22,9 +22,9 @@ const DialogsListItem = ({ index, item }) => (
     <Row>
       <Container justify='space-between' align='center'>
         <Row align='center'>
-          <ProfileImg>
+          <DialogIcon>
             <People width='100%' />
-          </ProfileImg>
+          </DialogIcon>
           <MessageWrap>
             <RegularText type='user_name' transform='truncate'>
               bogdan

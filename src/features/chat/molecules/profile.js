@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { TriangleDown } from 'styled-icons/octicons/TriangleDown'
-import { Row, ProfileImg } from '../../../ui/atoms'
+import { Row, DialogIcon } from '../../../ui/atoms'
 import { Container } from '../../../ui/template'
 import { ifProps } from '../../../lib/styled-components-layout'
 
@@ -12,7 +12,7 @@ export const Profile = () => {
     <ProfileWrapper opened={opened} onClick={toggle}>
       <Row>
         <Container justify='space-around' align='center'>
-          <ProfileImg user='rm'>R M</ProfileImg>
+          <DialogIcon user='rm'>R M</DialogIcon>
           <h2>Roy D. Miranda</h2>
           <TriangleDown />
         </Container>
