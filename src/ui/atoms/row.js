@@ -4,6 +4,7 @@ import { WithTag, mixins, ifProps } from '../../lib/styled-components-layout'
 export const Row = styled(WithTag)`
   display: flex;
   flex-direction: row;
+  position: relative;
   ${mixins}
   ${ifProps(
     'height',

@@ -10,6 +10,7 @@ export const ParentScroll = styled.div`
 const transformTypes = {
   margin: css`
     margin-right: -500px;
+    max-width: 320px;
   `,
 }
 
@@ -18,6 +19,7 @@ export const ScrollBlock = styled.div`
   width: 100%;
   width: ${({ width }) => width && width};
   transition: all 0.5s;
+  overflow-x: hidden;
   ${getStyle('transform', transformTypes)}
   ${ifProps(
     'isVisible',

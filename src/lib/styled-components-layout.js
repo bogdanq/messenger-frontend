@@ -24,4 +24,5 @@ export const mixins = props => css`
   order: ${prop(props.order)};
   padding: ${prop(props.padding)};
   width: ${prop(props.width)};
+  max-width: ${prop(props.maxW)};
 `

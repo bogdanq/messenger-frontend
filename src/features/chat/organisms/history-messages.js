@@ -34,7 +34,7 @@ export const HistoryMessages = () => {
           <MessagesArea />
         </ScrollBlock>
 
-        <ScrollBlock isVisible={openDialogInfo} transform='margin' width='30%'>
+        <ScrollBlock isVisible={!openDialogInfo} transform='margin'>
           <DialogInfo />
         </ScrollBlock>
       </ParentScroll>
